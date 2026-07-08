@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Học Thánh Ca - Hymn AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="study-body">
+    <div class="app-container study-layout">
+        <!-- Header -->
+        <header class="glass-header">
+            <div class="logo">
+                <span class="logo-icon">🎵</span>
+                <h1 style="cursor: pointer;" onclick="window.location.href='index.html'">Hymn<span class="highlight">AI</span></h1>
+            </div>
+            <nav>
+                <a href="index.html">Quay lại</a>
+            </nav>
+        </header>
+
+        <div class="study-grid">
+            <!-- Lời Bài Hát (Left Panel) -->
+            <section class="lyrics-panel glass-panel">
+                <h2 id="hymn-title" class="gradient-text">Đang tải...</h2>
+                <div class="lyrics-content" id="hymn-lyrics">
+                    <!-- Lyrics loaded here -->
+                </div>
+            </section>
+
+            <!-- Tương tác AI (Right Panel) -->
+            <section class="interaction-panel glass-panel">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="quiz">Trắc Nghiệm (AI)</button>
+                    <button class="tab-btn" data-tab="essay">Tự Luận (AI)</button>
+                </div>
+
+                <div class="tab-content active" id="tab-quiz">
+                    <div class="intro-box">
+                        <p>Hệ thống AI sẽ tự động phân tích lời bài Thánh Ca này và tạo ra 5 câu hỏi trắc nghiệm ngẫu nhiên để kiểm tra mức độ ghi nhớ của bạn.</p>
+                        <button class="btn btn-primary" id="btn-generate-quiz">✨ Tạo Bộ Câu Hỏi</button>
+                    </div>
+                    
+                    <div id="quiz-container" style="display: none;">
+                        <!-- Quiz content loaded here -->
+                    </div>
+                    
+                    <div id="quiz-result" class="result-box" style="display: none;"></div>
+                </div>
+
+                <div class="tab-content" id="tab-essay">
+                    <div class="intro-box">
+                        <p>AI sẽ đặt ra một câu hỏi suy ngẫm dựa trên bài Thánh Ca. Bạn hãy viết câu trả lời và AI sẽ chấm điểm cũng như nhận xét cho bạn.</p>
+                        <button class="btn btn-primary" id="btn-generate-essay">✨ Tạo Câu Hỏi Suy Ngẫm</button>
+                    </div>
+
+                    <div id="essay-container" style="display: none;">
+                        <h3 class="essay-question" id="ai-essay-question">Đang tạo câu hỏi...</h3>
+                        <textarea id="essay-answer" class="form-input" placeholder="Viết suy ngẫm của bạn vào đây..."></textarea>
+                        <button class="btn btn-success" id="btn-submit-essay">Gửi Bài & Chấm Điểm</button>
+                    </div>
+
+                    <div id="essay-result" class="result-box" style="display: none;">
+                        <div class="score-badge" id="essay-score">--/10</div>
+                        <p id="essay-feedback">Đang chờ chấm điểm...</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Cdn cho Markdown Parser nếu cần -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
